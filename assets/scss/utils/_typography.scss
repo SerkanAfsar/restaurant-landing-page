@@ -1,0 +1,70 @@
+@use "../abstract/variables" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-david;
+  margin: 0px;
+  padding: 0px;
+  color: get-colors(color-secondary);
+  font-style: normal;
+}
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  @include respond-up(md) {
+    text-align: left;
+  }
+  @include respond-up(lg) {
+    line-height: 72px; /* 102.857% */
+  }
+}
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+  @include respond-up(md) {
+    line-height: 65px; /* 108.333% */
+  }
+}
+h3 {
+  color: get-colors(color-white);
+  text-align: center;
+  font-size: var(--h3-font-size);
+  font-weight: 700;
+  line-height: 35px;
+  @include respond-up(lg) {
+    line-height: 58px; /* 116% */
+  }
+}
+h4 {
+  font-size: var(--h4-font-size);
+  font-weight: 700;
+  line-height: 26px; /* 130% */
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+  font-weight: 700;
+  line-height: 29px; /* 181.25% */
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+  font-weight: 700;
+  line-height: 40px; /* 333.333% */
+  text-transform: uppercase;
+}
+
+p {
+  color: get-colors(color-p);
+  font-size: var(--p-font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px; /* 181.25% */
+}

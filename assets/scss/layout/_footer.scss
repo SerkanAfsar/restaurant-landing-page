@@ -1,0 +1,95 @@
+@use "../abstract/mixins" as *;
+.footer {
+  width: 100%;
+  display: block;
+  background-color: #fff;
+
+  margin-top: 60px;
+  @include respond-up(xl) {
+    margin-top: -110px;
+    background-position: right 40% center;
+    background-image: url("../images/footerbg.png");
+    background-repeat: no-repeat;
+
+    background-size: contain;
+  }
+  h6 {
+    color: #101a24;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 333.333% */
+    text-transform: uppercase;
+  }
+  ul {
+    &:not(.footer-social) {
+      li {
+        display: block;
+        a {
+          color: #5c6574;
+
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 40px; /* 250% */
+        }
+      }
+    }
+  }
+  &-social {
+    @include flexBox;
+    gap: 10px;
+    li {
+      display: inline-block;
+      a {
+        @include flexBox;
+        border-radius: 100%;
+        padding: 5px;
+        border: 2px solid #000;
+      }
+    }
+  }
+  &-info {
+    img {
+      margin-top: -25px;
+    }
+    p {
+      margin-top: 20px;
+    }
+    h5 {
+      margin-top: 20px;
+    }
+    &-area {
+      margin-top: 20px;
+      width: 100%;
+      @include flexBox(row, space-between, flex-start);
+      gap: 20px;
+      color: #5c6574;
+
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 29px; /* 181.25% */
+      & > div {
+        @include flexBox(column, flex-start, flex-start);
+      }
+    }
+  }
+  &-divider {
+    width: 100%;
+    height: 1px;
+    opacity: 0.1;
+    background: #101a24;
+    display: block;
+  }
+  &-bottom {
+    color: #5c6574;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px; /* 181.25% */
+    text-align: center;
+  }
+}

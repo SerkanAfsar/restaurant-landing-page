@@ -1,0 +1,75 @@
+@use "../abstract/mixins" as *;
+.chef {
+  position: relative;
+  &-effect01 {
+    position: absolute;
+    scale: 0.8;
+    left: -20px;
+    @include respond-up(lg) {
+      top: 100px;
+      left: 0px;
+    }
+  }
+  &-effect02 {
+    position: absolute;
+    scale: 0.4;
+    top: -60px;
+    right: -80px;
+    @include respond-up(lg) {
+      scale: 0.9;
+      top: 40px;
+      left: 100px;
+    }
+  }
+  h2 {
+    text-align: center;
+    @include respond-up(lg) {
+      text-align: left;
+      margin-top: 150px;
+    }
+    @include respond-up(xl) {
+      margin-top: 20px;
+    }
+  }
+  p {
+    margin-top: 15px;
+    text-align: center;
+    @include respond-up(lg) {
+      text-align: left;
+      max-width: 370px;
+    }
+  }
+  &-items {
+    display: grid;
+    margin-top: 20px;
+    gap: 30px;
+    justify-items: center;
+    margin-bottom: 50px;
+    @include respond-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+    li {
+      position: relative;
+      padding-left: 40px;
+      color: #5c6574;
+      font-family: Inter;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 26px;
+        background: url("../images/check.png") center / contain no-repeat;
+      }
+    }
+  }
+}

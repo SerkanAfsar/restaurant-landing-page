@@ -1,0 +1,118 @@
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+.specials {
+  background: get-colors(color-bg-gray);
+  &-container {
+    width: 100%;
+    display: block;
+    // display: grid;
+    // gap: 120px;
+    // justify-items: center;
+
+    @include respond-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @include respond-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-up(xl) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+  }
+  &-info {
+    position: relative;
+    text-align: center;
+    p {
+      max-width: 420px;
+      margin: auto;
+      margin-top: 15px;
+    }
+  }
+  &-efect01 {
+    opacity: 0.2;
+    position: absolute;
+
+    display: none;
+    @include respond-up(md) {
+      display: block;
+      scale: 0.8;
+      left: -120px;
+      top: -30px;
+    }
+    @include respond-up(xl) {
+      left: -200px;
+      top: -30px;
+    }
+  }
+  &-efect02 {
+    opacity: 0.2;
+    position: absolute;
+
+    display: none;
+    @include respond-up(md) {
+      display: block;
+      scale: 0.8;
+      right: -100px;
+      top: -50px;
+    }
+
+    @include respond-up(xl) {
+      right: -150px;
+      top: -50px;
+    }
+  }
+  &-efect03 {
+    opacity: 0.2;
+    position: absolute;
+    display: none;
+    @include respond-up(md) {
+      display: block;
+      bottom: 15px;
+      left: 260px;
+      scale: 0.8;
+    }
+    @include respond-up(lg) {
+      bottom: -30px;
+      display: none;
+    }
+    @include respond-up(xl) {
+      display: block;
+      bottom: 40px;
+    }
+  }
+  &-efect04 {
+    opacity: 0.2;
+    position: absolute;
+
+    display: none;
+    @include respond-up(md) {
+      display: block;
+      right: -20px;
+      bottom: 10px;
+      scale: 0.8;
+    }
+    @include respond-up(lg) {
+      display: none;
+    }
+    @include respond-up(xl) {
+      display: block;
+      right: -20px;
+      bottom: 30px;
+    }
+  }
+}
+
+.slick-slide {
+  padding-top: 100px;
+  & > div {
+    text-align: center;
+  }
+  @include respond-up(md) {
+    margin: 0px 15px;
+  }
+  @include respond-up(xl) {
+  }
+}

@@ -1,0 +1,153 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+.hero {
+  position: relative;
+  @include respond-down(3xl) {
+    min-height: 100vh;
+  }
+  &-info {
+    height: 100%;
+    width: 100%;
+
+    @include respond-up(lg) {
+      max-width: 510px;
+    }
+
+    h1 {
+      max-width: 350px;
+      margin-inline: auto;
+
+      @include respond-up(md) {
+        max-width: unset;
+      }
+    }
+    p {
+      width: 100%;
+
+      text-align: center;
+      margin-inline: auto;
+      line-height: 200%;
+      @include respond-up(md) {
+        max-width: 500px;
+        margin-inline: 0px;
+        text-align: left;
+      }
+      @include respond-up(lg) {
+        max-width: 375px;
+      }
+    }
+  }
+  &-links {
+    @include flexBox(row);
+    gap: 20px;
+
+    @include respond-up(md) {
+      justify-content: flex-start;
+    }
+  }
+  &-social {
+    @include flexBox;
+    @include respond-up(md) {
+      justify-content: flex-start;
+    }
+
+    gap: 20px;
+    a {
+      @include flexBox;
+      width: 45px;
+      height: 45px;
+      border: 2px solid get-colors(color-secondary);
+      border-radius: 100%;
+    }
+  }
+
+  &-effect01 {
+    position: absolute;
+    width: 510px;
+    height: 532px;
+    display: block;
+    background: url("../images/headereffect01.png") no-repeat center;
+    left: 0px;
+    top: 0px;
+    transform: translateX(-30px) translateY(-50px);
+    display: none;
+    @include respond-up(xl) {
+      display: block;
+    }
+  }
+  &-effect02 {
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    display: block;
+    background: url("../images/circle.png") no-repeat center;
+    left: -50px;
+    top: -100px;
+    display: none;
+    @include respond-up(xl) {
+      display: block;
+      animation: allReverse 6s linear infinite;
+    }
+  }
+  &-mainimg {
+    @include respond-up(md) {
+      object-fit: contain;
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      border-bottom-left-radius: 30px;
+      border-top-right-radius: 30px;
+      object-position: center;
+    }
+  }
+  &-smallimg {
+    position: absolute;
+
+    display: none;
+
+    @include respond-up(md) {
+      display: block;
+      bottom: -60px;
+      left: -160px;
+
+      scale: 0.6;
+    }
+    @include respond-up(xl) {
+      left: -80px;
+      scale: 0.8;
+      animation: upDown 1.2s linear infinite alternate;
+    }
+  }
+  &-effect03 {
+    display: none;
+    z-index: -1;
+    position: absolute;
+    top: -100px;
+    left: -60px;
+
+    @include respond-up(xl) {
+      display: block;
+    }
+  }
+  &-effect04 {
+    display: none;
+    z-index: -1;
+    position: absolute;
+    top: -120px;
+    right: -100px;
+
+    @include respond-up(xl) {
+      display: block;
+    }
+  }
+  &-effect05 {
+    display: none;
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+    right: -100px;
+
+    @include respond-up(xl) {
+      display: block;
+    }
+  }
+}

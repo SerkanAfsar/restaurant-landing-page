@@ -208,6 +208,7 @@ body {
 body {
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 @-webkit-keyframes fadeIn {

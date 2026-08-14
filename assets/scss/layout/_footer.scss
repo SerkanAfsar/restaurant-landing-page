@@ -3,7 +3,6 @@
   width: 100%;
   display: block;
   background-color: #fff;
-
   margin-top: 60px;
   @include respond-up(xl) {
     margin-top: -110px;
@@ -73,6 +72,7 @@
       line-height: 29px; /* 181.25% */
       & > div {
         @include flexBox(column, flex-start, flex-start);
+        white-space: nowrap;
       }
     }
   }

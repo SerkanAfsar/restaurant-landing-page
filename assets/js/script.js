@@ -35,7 +35,7 @@ $(".specials-container").slick({
       },
     },
     {
-      breakpoint: 769,
+      breakpoint: 992,
       settings: {
         slidesToShow: 2,
       },

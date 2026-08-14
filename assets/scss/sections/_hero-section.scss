@@ -2,9 +2,7 @@
 @use "../abstract/functions" as *;
 .hero {
   position: relative;
-  @include respond-down(3xl) {
-    min-height: 100vh;
-  }
+
   &-info {
     height: 100%;
     width: 100%;

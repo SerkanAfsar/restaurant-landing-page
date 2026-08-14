@@ -5631,6 +5631,7 @@ p {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  white-space: nowrap;
 }
 .footer-divider {
   width: 100%;
@@ -5808,11 +5809,6 @@ p {
 
 .hero {
   position: relative;
-}
-@media all and (max-width: 2559.98px) {
-  .hero {
-    min-height: 100vh;
-  }
 }
 .hero-info {
   height: 100%;
